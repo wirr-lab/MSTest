@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AService {
+    @RequestMapping("/service")
+    public String index() {
+        return "Hello";
+    }
+
     @RequestMapping("/service/{name}")
-    public String index(@PathVariable("name") String name) {
-        return "Greetings from Spring Boot, " + name + "!";
+    public String greeting(@PathVariable("name") String name) {
+        return "Greeting " + name + "!";
     }
 }
